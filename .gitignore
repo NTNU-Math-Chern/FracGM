@@ -15,3 +15,7 @@ Cargo.lock
 
 # IDEs
 .vscode
+
+# environments
+.venv
+venv
