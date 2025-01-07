@@ -96,7 +96,7 @@ impl FractionalProgrammingMaterials<R2Sym> for LinearSolver {
         let (pc2, mean2) = &utils::get_zero_mean_point_cloud(pc2);
 
         let rot = utils::project(&pc2.t().dot(pc1)); // rotation
-        let t = mean2 - &rot.dot(&mean1.view());     // translation
+        let t = mean2 - &rot.dot(&mean1.view()); // translation
 
         let mut mat = Array2::eye(4);
 
