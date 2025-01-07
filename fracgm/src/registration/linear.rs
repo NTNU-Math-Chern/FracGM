@@ -95,11 +95,13 @@ impl FractionalProgrammingMaterials<R2Sym> for LinearSolver {
         let (pc1, mean1) = &utils::get_zero_mean_point_cloud(pc1);
         let (pc2, mean2) = &utils::get_zero_mean_point_cloud(pc2);
 
+        let rot = utils::project(&pc2.t().dot(pc1)); // rotation
+        let t = mean2 - &rot.dot(&mean1.view());     // translation
+
         let mut mat = Array2::eye(4);
 
-        mat.slice_mut(s![0..3, 0..3])
-            .assign(&utils::project(&pc2.t().dot(pc1)));
-        mat.slice_mut(s![0..3, 3]).assign(&(mean2 - mean1));
+        mat.slice_mut(s![0..3, 0..3]).assign(&rot);
+        mat.slice_mut(s![0..3, 3]).assign(&t);
 
         mat
     }
