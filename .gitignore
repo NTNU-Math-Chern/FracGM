@@ -19,3 +19,6 @@ Cargo.lock
 # environments
 .venv
 venv
+
+# macos
+.DS_Store
