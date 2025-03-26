@@ -138,11 +138,20 @@ pre {
   border-radius: 5px;
   padding: 1rem;
   line-height: 1.4rem;
-  white-space: pre; /* Preserve line breaks exactly */
+  white-space: pre; 
   word-wrap: normal;
   overflow-x: auto;
 }
 
 pre span {
   color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  #intro .about {
+    max-width: 100%; 
+  }
+  #bib .container {
+    max-width: 100%; 
+  }
 }
