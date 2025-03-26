@@ -11,9 +11,6 @@
     <title>FracGM</title>
     <link rel="icon" href="assets/images/icon.jpg" type="images/icon type" />
 
-    <!-- css -->
-    <link rel="stylesheet" href="static/style.css" />
-
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,29 +19,192 @@
       rel="stylesheet"
     />
 
-    <!-- icons -->
+    <!-- static -->
+    <link rel="stylesheet" href="static/style.css" />
+    <script defer src="static/script.js"></script>
+
+    <!-- third party -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
-    <!-- gsap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <!-- lenis -->
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
     />
-
-    <!-- js -->
-    <script defer src="static/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   </head>
 
   <body>
+    <section id="intro">
+      <div class="container">
+        <h1 class="title">
+          FracGM: A Fast Fractional Programming Technique for Geman-McClure
+          Robust Estimator
+        </h1>
 
+        <!-- authors -->
+        <div class="authors">
+          <span class="author">
+            <a href="https://dgbshien.com/" target="_blank">Bang-Shien Chen</a
+            ><sup class="num">1</sup>,
+          </span>
+          <span class="author">
+            <a href="https://github.com/StephLin" target="_blank">Yu-Kai Lin</a
+            ><sup class="num">2</sup>,
+          </span>
+          <span class="author">
+            <a href="https://github.com/Jian-yu-chen" target="_blank"
+              >Jian-Yu Chen</a
+            ><sup class="num">3</sup>,
+          </span>
+          <span class="author">
+            <a
+              href="https://sites.google.com/ce.ncu.edu.tw/cwhuang/"
+              target="_blank"
+              >Chih-Wei Huang</a
+            ><sup class="num">3</sup>,
+          </span>
+          <span class="author">
+            <a href="https://math.ntnu.edu.tw/~chern/" target="_blank"
+              >Jann-Long Chern</a
+            ><sup class="num">1</sup>,
+          </span>
+          <span class="author">
+            <a
+              href="https://www.dop.ncu.edu.tw/en/Faculty/faculty_more/9"
+              target="_blank"
+              >Ching-Cherng Sun</a
+            ><sup class="num">3</sup>
+          </span>
+        </div>
+
+        <!-- institution -->
+        <div class="institutions">
+          <div class="institution">
+            <sup class="num">1</sup>National Taiwan Normal University, Taiwan
+          </div>
+          <div class="institution">
+            <sup class="num">2</sup>MediaTek Inc., Taiwan
+          </div>
+          <div class="institution">
+            <sup class="num">3</sup>National Central University, Taiwan
+          </div>
+        </div>
+
+        <!-- links -->
+        <div class="links">
+          <span class="link"
+            ><a
+              href="https://doi.org/10.1109/lra.2024.3495372"
+              class="button"
+              target="_blank"
+            >
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a></span
+          >
+          <span class="link"
+            ><a
+              href="https://arxiv.org/pdf/2409.13978"
+              class="button"
+              target="_blank"
+            >
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a></span
+          >
+          <span class="link"
+            ><a
+              href="https://arxiv.org/pdf/2409.13978"
+              class="button"
+              target="_blank"
+            >
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+        </div>
+
+        <!-- about -->
+        <div class="about">
+          <p>
+            <i
+              >FracGM is a fast and accurate algorithm for Geman-McClure robust
+              estimation with fast convergence rate and well outlier rejection
+              capability.</i
+            >
+          </p>
+        </div>
+
+        <!-- teaser -->
+        <div class="teaser">
+          <span>
+            <img
+              src="assets/images/demo-iterations.gif"
+              alt="demo-iterations"
+              class="gif"
+            />
+            <img
+              src="assets/images/demo-registration.gif"
+              alt="demo-registration"
+              class="gif"
+            />
+          </span>
+          <p>A point cloud registration example using FracGM.</p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="abstract">
+      <div class="container">
+        <h1>Abstract</h1>
+        <p>
+          Robust estimation is essential in computer vision, robotics, and
+          navigation, aiming to minimize the impact of outlier measurements for
+          improved accuracy. We present a fast algorithm for Geman-McClure
+          robust estimation, FracGM, leveraging fractional programming
+          techniques. This solver reformulates the original non-convex
+          fractional problem to a convex dual problem and a linear equation
+          system, iteratively solving them in an alternating optimization
+          pattern. Compared to graduated non-convexity approaches, this strategy
+          exhibits a faster convergence rate and better outlier rejection
+          capability. In addition, the global optimality of the proposed solver
+          can be guaranteed under given conditions. We demonstrate the proposed
+          FracGM solver with Wahba's rotation problem and
+          <span class="num">3</span>-D point-cloud registration along with
+          relaxation pre-processing and projection post-processing. Compared to
+          state-of-the-art algorithms, when the outlier rates increase from
+          <span class="num">20</span>% to <span class="num">80</span>%, FracGM
+          shows <span class="num">53</span>% and <span class="num">88</span>%
+          lower rotation and translation increases. In real-world scenarios,
+          FracGM achieves better results in <span class="num">13</span> out of
+          <span class="num">18</span> outcomes, while having a
+          <span class="num">19.43</span>% improvement in the computation time.
+        </p>
+      </div>
+    </section>
+
+    <section id="bib">
+      <div class="container">
+        <h1>BibTeX</h1>
+        <pre><code><span>@article</span>{Chen24FracGM,
+  author={Chen, Bang-Shien and Lin, Yu-Kai and Chen, Jian-Yu and Huang, Chih-Wei and Chern, Jann-Long and Sun, Ching-Cherng},
+  journal={IEEE Robotics and Automation Letters},
+  title={FracGM: A Fast Fractional Programming Technique for Geman-McClure Robust Estimator},
+  year={2024},
+  volume={9},
+  number={12},
+  pages={11666-11673},
+  doi={10.1109/LRA.2024.3495372}
+}</code></pre>
+      </div>
+    </section>
   </body>
 </html>

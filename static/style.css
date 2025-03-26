@@ -1,0 +1,148 @@
+body {
+  font-family: "Cormorant", serif;
+  position: relative;
+}
+
+.num {
+  font-family: serif;
+}
+
+#intro {
+  justify-content: center;
+  display: flex;
+  padding: 10vh 2vh 0 2vh;
+}
+
+#intro .container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 960px;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.authors {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.authors sup {
+  font-size: 0.8rem;
+  color: #616a6b;
+}
+
+.authors a {
+  color: #438abc;
+  text-decoration: none;
+}
+
+.authors a:hover {
+  text-decoration: underline;
+}
+
+.author {
+  display: inline-block;
+}
+
+.institutions {
+  margin-bottom: 1.2rem;
+}
+
+.institution {
+  color: #616a6b;
+}
+
+.links {
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #424949;
+  color: white;
+  text-decoration: none;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.button .icon {
+  margin-right: 0.5rem;
+}
+
+.button:hover {
+  background-color: #616a6b;
+}
+
+.about {
+  background-color: #f4f4f4;
+  padding: 0.5rem 2rem;
+  margin: 0 auto 2rem;
+  max-width: 640px;
+  font-size: 1.1rem;
+  text-align: justify;
+  border-left: 0.2rem solid #e74c3c;
+}
+
+.teaser span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gif {
+  display: inline-block;
+  max-width: 400px;
+}
+
+#abstract {
+  justify-content: center;
+  display: flex;
+  padding: 0 2vh;
+}
+
+#abstract .container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 768px;
+}
+
+#abstract p {
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+#bib {
+  justify-content: center;
+  display: flex;
+  padding: 0 2vh 10vh 2vh;
+}
+
+#bib .container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 768px;
+}
+
+pre {
+  text-align: left;
+  background: #f4f4f4 !important;
+  border-radius: 5px;
+  padding: 1rem;
+  line-height: 1.4rem;
+  white-space: pre; /* Preserve line breaks exactly */
+  word-wrap: normal;
+  overflow-x: auto;
+}
+
+pre span {
+  color: #e74c3c;
+}
