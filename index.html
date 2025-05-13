@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow" />
 
     <title>FracGM</title>
-    <link rel="icon" href="assets/images/icon.jpg" type="images/icon type" />
+    <link rel="icon" href="assets/icon/icon.jpg" type="images/icon type" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -134,11 +134,9 @@
         <!-- about -->
         <div class="about">
           <p>
-            <i
-              >FracGM is a fast and accurate algorithm for Geman-McClure robust
-              estimation with fast convergence rate and well outlier rejection
-              capability.</i
-            >
+            FracGM is a solver for Geman-McClure robust estimation with fast
+            convergence rate and well outlier rejection capability. We
+            demonstrate FracGM on registration problems.
           </p>
         </div>
 
@@ -146,23 +144,37 @@
         <div class="teaser">
           <span>
             <img
-              src="assets/images/demo-iterations.gif"
-              alt="demo-iterations"
+              src="assets/gif/bunny_iterations.gif"
+              alt="bunny-iterations"
               class="gif"
             />
             <img
-              src="assets/images/demo-registration.gif"
-              alt="demo-registration"
+              src="assets/gif/bunny_results.gif"
+              alt="bunny-results"
               class="gif"
             />
           </span>
-          <p>A point cloud registration example using FracGM.</p>
-          <p></p>
+          <p class="label">
+            (a) Synthetic Stanford bunny dataset with 80% of outliers.
+          </p>
+          <span>
+            <img
+              src="assets/gif/3dmatch_iterations.gif"
+              alt="3dmatch-iterations"
+              class="gif"
+            />
+            <img
+              src="assets/gif/3dmatch_results.gif"
+              alt="3dmatch-results"
+              class="gif"
+            />
+          </span>
+          <p class="label">(b) Real-world benchmark 3DMatch dataset.</p>
         </div>
       </div>
     </section>
 
-    <section id="abstract">
+    <section class="section">
       <div class="container">
         <h1>Abstract</h1>
         <p>
@@ -177,21 +189,76 @@
           exhibits a faster convergence rate and better outlier rejection
           capability. In addition, the global optimality of the proposed solver
           can be guaranteed under given conditions. We demonstrate the proposed
-          FracGM solver with Wahba's rotation problem and
-          <span class="num">3</span>-D point-cloud registration along with
-          relaxation pre-processing and projection post-processing. Compared to
-          state-of-the-art algorithms, when the outlier rates increase from
-          <span class="num">20</span>% to <span class="num">80</span>%, FracGM
-          shows <span class="num">53</span>% and <span class="num">88</span>%
-          lower rotation and translation increases. In real-world scenarios,
-          FracGM achieves better results in <span class="num">13</span> out of
-          <span class="num">18</span> outcomes, while having a
-          <span class="num">19.43</span>% improvement in the computation time.
+          FracGM solver with Wahba's rotation problem and 3-D point-cloud
+          registration along with relaxation pre-processing and projection
+          post-processing. Compared to state-of-the-art algorithms, when the
+          outlier rates increase from 20% to 80%, FracGM shows 53% and 88% lower
+          rotation and translation increases. In real-world scenarios, FracGM
+          achieves better results in 13 out of 18 outcomes, while having a
+          19.43% improvement in the computation time.
         </p>
       </div>
     </section>
 
-    <section id="bib">
+    <section class="section">
+      <div class="container">
+        <h1>Method</h1>
+        <span>
+          <img src="assets/image/algorithm.webp" alt="algorithm" class="img" />
+        </span>
+        <p>
+          The Geman-McClure robust estimation problem is a special case of
+          fractional program, where the numerators and denominator are all
+          convex (assuming that all square of residuals are convex). We
+          introduce upper bound variables and Lagrange multipliers to
+          reformulate the fractional program to a dual problem. We then
+          alternatively solves the dual problem by a convex program and a linear
+          system. Note that the linear system are part of the KKT conditions of
+          the convex dual problem. In addition, we develop conditionally global
+          optimality for the proposed solver with the help of fractional
+          programming techniques.
+        </p>
+        <span>
+          <img
+            src="assets/image/registration.webp"
+            alt="registration"
+            class="img"
+          />
+        </span>
+        <p>
+          We demonstrate FracGM on point cloud registration problems. In order
+          to apply FracGM, we relax the rotational constraint to align our
+          assumptions (all square of residuals are convex). The convex dual
+          problem is now a convex quadratic program with linear constraints
+          only. Therefore, both the convex program and the linear system has
+          closed-form solutions. At last, since the solution does not satisfy
+          the rotational constraint, we project the solutoin back to the
+          rotation group by singular value decomposition.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1>Results</h1>
+        <span>
+          <img src="assets/image/bunny.webp" alt="bunny" class="img" />
+        </span>
+        <p class="label">
+          (a) Point Cloud Registration with Synthetic Bunny Dataset. FracGM is
+          truly robust even with extreme outlier rates.
+        </p>
+        <span>
+          <img src="assets/image/3dmatch.webp" alt="3dmatch" class="img" />
+        </span>
+        <p class="label">
+          (b) Point Cloud Registration with 3DMatch Dataset. FracGM achieves the
+          best results in 13 out of 18 outcomes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="bib">
       <div class="container">
         <h1>BibTeX</h1>
         <pre><code><span>@article</span>{Chen24FracGM,

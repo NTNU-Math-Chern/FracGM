@@ -1,10 +1,7 @@
-body {
+html, body {
   font-family: "Cormorant", serif;
   position: relative;
-}
-
-.num {
-  font-family: serif;
+  overflow-x: hidden;
 }
 
 #intro {
@@ -101,35 +98,43 @@ body {
   max-width: 400px;
 }
 
-#abstract {
+.label {
+  font-size: 1rem;
+  color: #7b7d7d;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section {
   justify-content: center;
   display: flex;
   padding: 0 2vh;
 }
 
-#abstract .container {
+.section .container {
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 768px;
 }
 
-#abstract p {
+.section p {
+  font-size: 1.1rem;
   text-align: justify;
   text-indent: 2rem;
 }
 
-#bib {
-  justify-content: center;
-  display: flex;
-  padding: 0 2vh 10vh 2vh;
+.section .label {
+  font-size: 1rem;
+  color: #7b7d7d;
 }
 
-#bib .container {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 768px;
+#bib {
+  padding: 0 2vh 10vh 2vh;
 }
 
 pre {
@@ -138,7 +143,7 @@ pre {
   border-radius: 5px;
   padding: 1rem;
   line-height: 1.4rem;
-  white-space: pre; 
+  white-space: pre;
   word-wrap: normal;
   overflow-x: auto;
 }
@@ -149,9 +154,9 @@ pre span {
 
 @media (max-width: 768px) {
   #intro .about {
-    max-width: 100%; 
+    max-width: 100%;
   }
   #bib .container {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
