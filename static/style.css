@@ -24,6 +24,11 @@ body {
   margin-bottom: 1rem;
 }
 
+.journal {
+  font-size: 1.1rem;
+  color: #e74c3c;
+}
+
 .authors {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -56,6 +61,7 @@ body {
 }
 
 .links {
+  margin-top: 1.2rem;
   margin-bottom: 2rem;
 }
 
