@@ -1,16 +1,14 @@
+html,
 body {
   font-family: "Cormorant", serif;
   position: relative;
-}
-
-.num {
-  font-family: serif;
+  overflow-x: hidden;
 }
 
 #intro {
   justify-content: center;
   display: flex;
-  padding: 10vh 2vh 0 2vh;
+  padding: 4vh 2vh 0 2vh;
 }
 
 #intro .container {
@@ -24,6 +22,11 @@ body {
   font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+
+.journal {
+  font-size: 1.1rem;
+  color: #e74c3c;
 }
 
 .authors {
@@ -58,6 +61,7 @@ body {
 }
 
 .links {
+  margin-top: 1.2rem;
   margin-bottom: 2rem;
 }
 
@@ -101,35 +105,43 @@ body {
   max-width: 400px;
 }
 
-#abstract {
+.label {
+  font-size: 1rem;
+  color: #7b7d7d;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section {
   justify-content: center;
   display: flex;
   padding: 0 2vh;
 }
 
-#abstract .container {
+.section .container {
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 768px;
 }
 
-#abstract p {
+.section p {
+  font-size: 1.1rem;
   text-align: justify;
   text-indent: 2rem;
 }
 
-#bib {
-  justify-content: center;
-  display: flex;
-  padding: 0 2vh 10vh 2vh;
+.section .label {
+  font-size: 1rem;
+  color: #7b7d7d;
 }
 
-#bib .container {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 768px;
+#bib {
+  padding: 0 2vh 4vh 2vh;
 }
 
 pre {
@@ -138,7 +150,7 @@ pre {
   border-radius: 5px;
   padding: 1rem;
   line-height: 1.4rem;
-  white-space: pre; 
+  white-space: pre;
   word-wrap: normal;
   overflow-x: auto;
 }
@@ -148,10 +160,38 @@ pre span {
 }
 
 @media (max-width: 768px) {
-  #intro .about {
-    max-width: 100%; 
+  #intro {
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .journal {
+    font-size: 1rem;
+  }
+  .authors {
+    font-size: 1rem;
+  }
+  .authors sup {
+    font-size: 0.8rem;
+  }
+  .about {
+    padding: 0.1rem 1.4rem;
+    margin: 0 auto 1.4rem;
+    max-width: 640px;
+    font-size: 0.9rem;
+  }
+  .label {
+    font-size: 0.9rem;
+    color: #7b7d7d;
+  }
+  .section p {
+    font-size: 0.9rem;
+  }
+  .section .label {
+    font-size: 0.8rem;
   }
   #bib .container {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
