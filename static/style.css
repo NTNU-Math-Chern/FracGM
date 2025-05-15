@@ -8,7 +8,7 @@ body {
 #intro {
   justify-content: center;
   display: flex;
-  padding: 10vh 2vh 0 2vh;
+  padding: 4vh 2vh 0 2vh;
 }
 
 #intro .container {
@@ -141,7 +141,7 @@ body {
 }
 
 #bib {
-  padding: 0 2vh 10vh 2vh;
+  padding: 0 2vh 4vh 2vh;
 }
 
 pre {
@@ -160,8 +160,36 @@ pre span {
 }
 
 @media (max-width: 768px) {
-  #intro .about {
+  #intro {
     max-width: 100%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .journal {
+    font-size: 1rem;
+  }
+  .authors {
+    font-size: 1rem;
+  }
+  .authors sup {
+    font-size: 0.8rem;
+  }
+  .about {
+    padding: 0.1rem 1.4rem;
+    margin: 0 auto 1.4rem;
+    max-width: 640px;
+    font-size: 0.9rem;
+  }
+  .label {
+    font-size: 0.9rem;
+    color: #7b7d7d;
+  }
+  .section p {
+    font-size: 0.9rem;
+  }
+  .section .label {
+    font-size: 0.8rem;
   }
   #bib .container {
     max-width: 100%;
